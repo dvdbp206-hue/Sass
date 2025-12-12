@@ -1,0 +1,20 @@
+
+/* FUNÇÕES  */
+$total: 12;
+  // Name name
+  // Desc
+  // Return
+  @function largura-coluna($coluna) {
+    /*@warn 'warn me';*/
+    /*@return $coluna/$total * 100;*/
+    @return percentage($coluna/$total);
+  }
+
+
+tbody {
+  color: red;
+  font-size: 10px;
+  width: largura-coluna(4);
+}
+
+/*# sourceMappingURL=meu-estilo.scss.map */

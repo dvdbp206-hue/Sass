@@ -1,0 +1,15 @@
+@mixin titulo{
+
+	background-color: black ;
+	padding: 10px 5px;
+}
+
+
+h1 {
+	color: white;
+	@include titulo;
+}
+h2 {
+	color: yellow;	
+	@include titulo;
+}

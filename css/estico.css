@@ -1,0 +1,243 @@
+@charset "UTF-8";
+/* Definição de variavel */
+h2 {
+  color: black;
+}
+
+#conteudo {
+  background: purple;
+  padding: 15px;
+  /* $cor: red !global;*/
+}
+#conteudo h1, #conteudo h4 {
+  color: red;
+}
+#conteudo a {
+  color: red;
+  /* & selector pai*/
+}
+#conteudo a:hover {
+  color: yellow;
+}
+
+#rodape {
+  background: black;
+}
+
+/* interpolação */
+.cor-vermelha {
+  color: red;
+}
+
+/* loop for */
+/* through e to */
+.item-1 {
+  background: greenyellow;
+  margin-bottom: 2px;
+}
+
+.item-2 {
+  background: greenyellow;
+  margin-bottom: 2px;
+}
+
+.item-3 {
+  background: greenyellow;
+  margin-bottom: 2px;
+}
+
+/* while */
+.item-1 {
+  background: orange;
+  margin-bottom: 2px;
+}
+
+.item-2 {
+  background: orange;
+  margin-bottom: 2px;
+}
+
+.item-3 {
+  background: orange;
+  margin-bottom: 2px;
+}
+
+.item-4 {
+  background: orange;
+  margin-bottom: 2px;
+}
+
+/* each  foreach para itens e troca de cores*/
+.item-1 {
+  background: green;
+  margin-bottom: 2px;
+}
+
+.item-2 {
+  background: greenyellow;
+  margin-bottom: 2px;
+}
+
+.item-3 {
+  background: darkblue;
+  margin-bottom: 2px;
+}
+
+.item-4 {
+  background: red;
+  margin-bottom: 2px;
+}
+
+/* FUNÇÕES  */
+/* $total: 12; */
+/* total chamando em partials */
+/*@import '_variaveis.scss';*/
+/*  
+16.6666666667%
+*/
+#div-especial {
+  width: 41.6666666667%;
+}
+
+.col-1 {
+  width: 8.3333333333%;
+  background: greenyellow;
+  margin-bottom: 2px;
+}
+
+.col-2 {
+  width: 16.6666666667%;
+  background: greenyellow;
+  margin-bottom: 2px;
+}
+
+.col-3 {
+  width: 25%;
+  background: greenyellow;
+  margin-bottom: 2px;
+}
+
+.col-4 {
+  width: 33.3333333333%;
+  background: greenyellow;
+  margin-bottom: 2px;
+}
+
+.col-5 {
+  width: 41.6666666667%;
+  background: greenyellow;
+  margin-bottom: 2px;
+}
+
+.col-6 {
+  width: 50%;
+  background: greenyellow;
+  margin-bottom: 2px;
+}
+
+.col-7 {
+  width: 58.3333333333%;
+  background: greenyellow;
+  margin-bottom: 2px;
+}
+
+.col-8 {
+  width: 66.6666666667%;
+  background: greenyellow;
+  margin-bottom: 2px;
+}
+
+.col-9 {
+  width: 75%;
+  background: greenyellow;
+  margin-bottom: 2px;
+}
+
+.col-10 {
+  width: 83.3333333333%;
+  background: greenyellow;
+  margin-bottom: 2px;
+}
+
+.col-11 {
+  width: 91.6666666667%;
+  background: greenyellow;
+  margin-bottom: 2px;
+}
+
+.col-12 {
+  width: 100%;
+  background: greenyellow;
+  margin-bottom: 2px;
+}
+
+/*  Outras funções */
+/* mesclagem de cores ou rgb */
+.alerta {
+  background: rgb(89.25, 140.95, 0);
+  color: black;
+}
+
+/* deixar alguma cor mais escura*/
+.alerta-darken {
+  background: rgb(233.75, 151.25, 0);
+  color: black;
+}
+
+/* deixar alguma cor mais clara*/
+.alerta-lighten {
+  background: #ffb733;
+  color: black;
+}
+
+/*  mixin  */
+h1 {
+  /*color: white;*/
+  color: white;
+  background-color: black;
+  padding: 10px 5px;
+}
+
+h2 {
+  color: lime;
+  background-color: gold;
+  padding: 10px 5px;
+}
+
+/*
+		herança e multiplas diretivas
+
+		%placehouder para não gerar no css final
+*/
+.vermela {
+  color: red;
+}
+
+.vermela {
+  background: black;
+}
+
+/* encadeamentos */
+.erro {
+  color: red;
+}
+
+.erro {
+  background: black;
+}
+
+.erro {
+  padding: 10px;
+  border: 1px solid red;
+}
+
+p {
+  color: red;
+}
+
+body {
+  background: black;
+  color: white;
+}
+
+/*# sourceMappingURL=estico.css.map */

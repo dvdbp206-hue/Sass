@@ -1,0 +1,237 @@
+/* Definição de variavel */
+$cor: black;
+$bg: purple;
+
+h2{
+	color:$cor;
+}
+
+#conteudo {
+	background: $bg;
+	padding: 15px;
+	/* $cor: red !global;*/
+	$cor: red ;
+	
+
+	h1,h4{
+
+		color: $cor;
+	}
+
+	a{
+		color: red;
+		/* & selector pai*/
+		&:hover{color: yellow;}
+	}
+
+
+}
+
+#rodape {
+
+	background: $cor;
+}
+
+
+/* interpolação */
+
+$classe: cor-vermelha;
+$color: color;
+$cor: red;
+
+
+.#{$classe}{
+	#{$color}: $cor;
+
+}
+
+
+/* loop for */ 
+/* through e to */
+
+@for $i from 1 through 3 {
+		.item-#{$i} {
+			
+				background:  greenyellow;
+				margin-bottom: 2px;
+		}
+	}
+
+
+/* while */
+$contador: 1;
+@while $contador < 5 {
+	.item-#{$contador} {
+			
+				background:  orange;
+				margin-bottom: 2px;
+		}
+	$contador: $contador + 1;
+}
+
+
+/* each  foreach para itens e troca de cores*/
+$lista: green, greenyellow, darkblue, red;
+$contador: 1;
+@each $cor in $lista {
+	.item-#{$contador} {
+			
+				background:  $cor;
+				margin-bottom: 2px;
+		}
+$contador: $contador + 1;
+
+}
+
+
+/* FUNÇÕES  */
+/* $total: 12; */
+/* total chamando em partials */ 
+/*@import '_variaveis.scss';*/
+@import 'variaveis';
+	// Name name
+	// Desc
+	// Return
+	@function largura-coluna($coluna) {		
+		/*@return $coluna/$total * 100;*/
+		@return percentage($coluna/$total);
+	}
+
+$resultado: largura-coluna(2);
+
+/*  
+#{$resultado}
+*/
+
+#div-especial{
+
+	width: largura-coluna(5);
+}
+
+
+
+
+@for $i from 1 through $total {
+		.col-#{$i} {
+				width: largura-coluna($i);			
+				background:  greenyellow;
+				margin-bottom: 2px;
+		}
+	}
+
+
+/*  Outras funções */
+
+/* mesclagem de cores ou rgb */
+.alerta {
+	background: mix(green, orange, 65%);
+	color: black;
+
+}
+
+/* deixar alguma cor mais escura*/
+.alerta-darken {
+	background: darken(orange,largura-coluna(0.5));
+	color: black;
+
+}
+/* deixar alguma cor mais clara*/
+.alerta-lighten {
+	background: lighten(orange,10%);
+	color: black;
+
+}
+
+
+/*  mixin  */
+
+@mixin titulo($cor:white, $cor-bg:black){
+	color: $cor;
+	background-color: $cor-bg ;
+	padding: 10px 5px;
+}
+
+
+h1 {
+	/*color: white;*/
+	@include titulo();
+}
+h2 {
+	
+	@include titulo(lime, gold);
+}
+
+
+/*
+		herança e multiplas diretivas
+
+		%placehouder para não gerar no css final
+*/
+
+%classe1 {
+	color: red;
+}
+%classe2 {
+	background: black;
+}
+
+.vermela {
+	@extend %classe1;
+	@extend %classe2;
+}
+
+
+/* encadeamentos */
+
+%pai {
+	color: red;
+}
+%filho {
+	@extend %pai;
+	background: black;
+}
+
+.erro {
+	@extend %filho;
+	padding: 10px;
+	border: 1px solid red;
+
+}
+
+$cor: red;
+@if($cor == green) {
+	p{
+		color: $cor;
+	}
+}@else if($cor == red){
+	p{
+		color: $cor;
+	}	
+}@else{
+	p{
+		color: $cor;
+	}
+	
+}
+
+
+
+@mixin tema($tema: padrao){
+	@if($tema == natal) {
+		background: red;
+		color:white;
+		}
+		@else if($tema == black-friday) {
+		background: black;
+		color:white;
+		}@else {
+			background: white;
+			color:black;
+		}
+}
+
+body{
+ 
+ @include tema(black-friday);
+
+}
